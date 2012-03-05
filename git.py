@@ -13,7 +13,7 @@ def git(op):
     print "\t\tRemote ->"
     os.system("git remote")
    # os.system("git remote add origin git@github.com:SolomonPeter26/pythontask.git")
-
+    os.system("git push origin master")
 
 
 if __name__ == "__main__" :
