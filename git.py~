@@ -1,0 +1,21 @@
+import os
+
+def git(op):
+    s = os.walk('/home/solomon/pythonex')
+    c = str("cd " + str(s))
+    os.system(c)
+#    os.system("ls -a"))
+#    os.system("git add .")
+    
+#    stri="git commit -m "+ (raw_input("Enter message for commit:"))
+#    print "\t\tLocal ->"
+#    os.system("git log")
+    
+#    print "\t\tRemote ->"
+##    os.system("git remote")
+ #   os.system("git remote add origin git@github.com:SolomonPeter26/python-examples.git")
+ #   os.system("git push origin master")
+
+
+if __name__ == "__main__" :
+    git(1)
