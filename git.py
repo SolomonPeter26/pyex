@@ -45,8 +45,8 @@ def git(op):
     os.system("git remote")
     
         
-    os.system("git remote add origin git@github.com:SolomonPeter26/pyex.git")
-    os.system("git push origin master")
+    os.system("git remote add orig git@github.com:SolomonPeter26/pyex.git")
+    os.system("git push orig master")
 
 
 if __name__ == "__main__" :
