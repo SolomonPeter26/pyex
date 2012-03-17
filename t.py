@@ -1,6 +1,7 @@
 import os , re ,fileinput
 num=0;
 for top, dirs, files in os.walk(raw_input("Enter the path: ")):
+    print "Directory Found ->" + str(top)
     for nm in files:       
         currentFile = os.path.join(top, nm)
         print currentFile

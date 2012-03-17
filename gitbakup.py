@@ -1,6 +1,11 @@
 import os
 
-def createrepo():
+     
+def git(op):
+    #os.getcwd()
+    #print s
+#    print os.listdir(os.getcwd())
+
             #change directory
     folpath=""
     fold=raw_input("Enter repository name ");
@@ -10,24 +15,10 @@ def createrepo():
     chp="/home/solomon/SolomonPeter26/Private/" + fold
     os.chdir(chp)
     os.system(" touch README.md");
+#    os.getcwd()
+    
     print "\n\n"
     print os.listdir(os.getcwd())
-    
-def pushgithub():    #commits on local repo and pushes to remote repo
-    fold=raw_input("Enter repository name ");
-    uname=raw_input("Enter User name ");
-    chp="/home/solomon/" + uname + "/Private/" + fold
-    os.chdir(chp)
-    print "\n\n"
-    print os.listdir(os.getcwd())   #shifted to local repo
-    os.system("git remote")
-    bran=raw_input("Enter remote branch ");     #select which remote branch you want to go to
-    commitlocal()                   #commits on local repo
-    remotepush(bran,uname,fold)     #pushes to remote repo
-    
-
-     
-def git(op):
 
             # only INITIALISE GIT IN FOLDER
     os.system(" git config --global user.name \"Solomon Peter\"")
@@ -35,7 +26,6 @@ def git(op):
     os.system(" git init")
 
     
-def commitlocal():
             #add files for commit
     os.system(" git add .")
     stri=" git commit -m \" " + (raw_input("Enter message for commit:")) + "\""
@@ -53,25 +43,25 @@ def commitlocal():
     print "\t\tCommited Files ->"
     os.system(" git ls-files")
     
-def remotel():    
+    
     print "\t\tRemote ->"
     os.system(" git remote")
-
-
-
+#    raw_input("Enter Login Name")
+    
+#    os.system("curl -F 'login=SolomonPeter26' -F 'token=a4d1fb125214f2a1ded31145ae77b068' https://github.com/api/v2/json/repos/create -F 'name=Test' -F 'description=This project is a test'")
+#   os.system("git remote add origin git@github.com:nyeates/projectname.git")
+#    git push origin master
     crn="curl -F 'login=SolomonPeter26' -F 'token=a4d1fb125214f2a1ded31145ae77b068' https://github.com/api/v2/json/repos/create -F 'name=" + fold + "' -F 'description=" + raw_input("Enter description for project: ") + "\'"
     print crn
     os.system(crn)
-
-#function to push on github  
-def remotepush(bran,uname,fold):
-#    strr=" git remote add " + brname + " git@github.com:" + uname + "/" + fold + ".git"
-#    print strr
-#    os.system(strr)
-    strr2="git push " + bran + " master"
-    print strr2
-    os.system(strr2)
+    strr=" git remote add origin git@github.com:SolomonPeter26/" + fold + ".git"
+    print strr
+    os.system(strr)
+    os.system(" git push origin master")
     
+#curl -F 'login=nyeates' -F 'token=XXX' https://github.com/api/v2/json/repos/create -F 'name=projectname' -F 'description=This project is a test'
+#git remote add origin git@github.com:nyeates/projectname.git
+#git push origin master
 
 if __name__ == "__main__" :
-    pushgithub()
+    git(1)
